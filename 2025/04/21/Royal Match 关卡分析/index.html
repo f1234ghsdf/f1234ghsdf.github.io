@@ -1,0 +1,665 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>Royal Match 关卡分析 | Gimme</title><meta name="keywords" content="游戏拆分"><meta name="author" content="Gimme"><meta name="copyright" content="Gimme"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="Royal Match 关卡分析"><meta name="application-name" content="Royal Match 关卡分析"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="Royal Match 关卡分析"><meta property="og:url" content="https://blog.1018hl.cn/2025/04/21/Royal%20Match%20%E5%85%B3%E5%8D%A1%E5%88%86%E6%9E%90/index.html"><meta property="og:site_name" content="Gimme"><meta property="og:description" content="Royal Match 关卡分析[TOC] 一、     障碍设计   障碍类别 定义 方块名称 图像    阻碍类 可被消除的阻碍类障碍。可以被消除或道具消除； 木块，龙蛋，盘子，罐子，石头，彩色木块，金猪    地面类 覆盖地表上，需要（消除，道具）1次或多次才能解除相关的障碍； 草坪    覆"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://bu.dusays.com/2025/04/27/680db6b5c42bd.png"><meta property="article:author" content="Gimme"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://bu.dusays.com/2025/04/27/680db6b5c42bd.png"><meta name="description" content="Royal Match 关卡分析[TOC] 一、     障碍设计   障碍类别 定义 方块名称 图像    阻碍类 可被消除的阻碍类障碍。可以被消除或道具消除； 木块，龙蛋，盘子，罐子，石头，彩色木块，金猪    地面类 覆盖地表上，需要（消除，道具）1次或多次才能解除相关的障碍； 草坪    覆"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="https://blog.1018hl.cn/2025/04/21/Royal%20Match%20%E5%85%B3%E5%8D%A1%E5%88%86%E6%9E%90/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: undefined,
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":null},
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: Gimme","link":"链接: ","source":"来源: Gimme","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'Gimme',
+  title: 'Royal Match 关卡分析',
+  postAI: '',
+  pageFillDescription: 'Royal Match 关卡分析, 一、     障碍设计, 1.1. 阻碍类障碍, 1.2. 地面类障碍, 1.3. 覆盖类障碍, 1.4. 收集类障碍, 1.4. 解谜类障碍, 二、      障碍物出现顺序, 2.1.关卡节奏, 三、      关卡节奏感分析, 3.1. 初始节奏体验, 3.2. 过程节奏体验, 3.3. 结尾节奏体验关卡分析一障碍设计障碍类别定义方块名称图像阻碍类可被消除的阻碍类障碍可以被消除或道具消除木块龙蛋盘子罐子石头彩色木块金猪地面类覆盖地表上需要消除道具次或多次才能解除相关的障碍草坪覆盖类通过困住某个物件或者其他东西需要一定的条件才能解掉消除道具黄油收集类收集某个物件范围可能是某一个具体的障碍或者坚果或其他他活动性的障碍甚至是布局底下的覆盖类的收集比如三消中底部的事物收集收信箱小鸟解谜类需要收集一定的钥匙才能解锁障碍这个障碍可能是覆盖类的障碍也可能是产生障碍类的障碍门帘障碍设计前期关卡是以阻碍类地面类覆盖类收集组合障碍等来进行设计阻碍类障碍打击次数从木板方块开始消除次破坏障碍到消除多次破坏障碍消除条件后期就是需要相同颜色才能消除或者只有道具才能消除普通的不能消除障碍大小障碍大小从个单元格到多个单元格去跨度障碍分布个单元格障碍会当成基础印象障碍来利用分布于所有关卡中利用最多是木板和草坪元素障碍物组合后期木箱彩色瓶铁门冰带贝壳组合障碍都是以大块阻碍类基础演变来所以整体也是一块一块碎裂只是更大效果更强障碍物破坏表现都以破坏破碎感来展示不管是木块龙蛋盘子罐子石头金猪最终效果玩家体验满足破坏欲看到东西裂开炸开碎开有爽感有压力被释放快感美术风格围绕着皇室生活相关题材展开以木头陶瓷石头金币来表现地面类障碍破坏次数从层覆盖到多层覆盖最多层地面类障碍只有草坪元素草坪是皇室必有元素所以也成了基础元素玩家体验人行为是有欲望把覆盖在表面东西扯下来并且让它保持一致性强迫症美术风格地面类在三消中是必出现开心消消乐是以冰块来而和梦幻家园是草坪贴近皇室或者生活覆盖类障碍黄油是一整片出现给予玩家会有非常强烈视觉效果黄油很少小块用打起来也是很爽就是黄油掉落并且看到里面东西覆盖类障碍这里表现是黄油在题材上做了创新就是皇室相关的东西玩家体验有解谜类感觉想知道底下有什么东西也有地面类障碍感觉美术风格黄油颜色和题材都是皇室相关收集类障碍信箱它是固定在某个位置玩家需要想办法靠近消除或者道具才能作用到所以这种设计可以简单也可以非常难根据地图摆放小鸟掉落设计核心就是让小鸟掉下来所以难点在于下面障碍摆放可以足够难信箱和小鸟这两个玩法还是有一定区别一个是固定位置一个是类似于拯救玩家体验拯救动物这种比较好理解人性点来收集多少物件这个如果硬要扯就是目标收集以及收集欲但更多是一种目标达成解谜类障碍窗帘解开条件就是达成收集多少颜色色块才能解除而且是属于大范围让玩家有很明确短期目标解开后里面障碍只有一种只放一种障碍希望保持关卡干净前关到关才出现解谜类障碍需要玩家达到一定条件拿到钥匙条件才能看到里面东西解开后里面还有一层障碍二障碍物出现顺序关卡障碍名称分类大小分析木头阻碍类格第关木头就强化为打击次木头了但不在引导只是让玩家去探索视觉表现上有区分第关木头再次强化了需要打击更多次头木箱木头是最基础元素百搭型草坪地面类格第关强化成次打击草坪障碍第关强化为次打击障碍大门组合类格需要打击多次才能开门开完门后里面有盘子继续打这种障碍就不会再强化而是各种组合其他障碍设计信箱收集类格这个设计难点就是信箱放哪里以及数量多少位置决定好不好打没有延伸出更多更难玩法龙蛋阻碍类格基础玩法打击次彩色瓶组合类格本质就是让玩家打不同颜色把原本只要消除即能解决问题加上条件需要相同颜色才能解除而且有了数量上限制罐子阻碍类格基础玩法打击次从难度上看是越来越难了和龙蛋相比因为一个障碍从打击次变次单个维度并没有难但是从数量上来看难度会更高石头阻碍类格不可以消除需要道具才能解决问题了大草丛组合类格多次打击从阻碍类地面类障碍黄油覆盖类格新类型覆盖住基本操作区域大铁门组合类格多次打击难度比一般防水会更大次打击小鸟收集类格新玩法彩色木阻碍类格阻碍类玩法从次数升级再到技能升级石头再到颜色限制要求换另一种维度来让难度加大冰带组合类格打击次才能解除一行它属于阻挡类玩法金猪阻碍类格次打击只能道具消除窗帘解谜类需要钥匙才能解锁解锁后下面还有惊喜等待贝壳阻碍类格需要次打击难度再次升级关卡节奏关一个新障碍出现其中规律变现为阻碍类收集组合类覆盖类收集组合类收集类关卡难度普通关卡不一定简单困难关卡也基本上是比较难超级困难关卡卡次数一般会超过次以上从关开始都有出现以后每遇到带的关卡都会是困难关卡如障碍数量种以上基本上是种数量障碍组合障种类困难关卡是会结合最新关卡让玩家体验当突破关一个新障碍时一般会以障碍参与组合在关后面逢带的关卡会出现超级困难关卡障碍数量同样是种障碍障碍种类以新障碍去组合其他障碍三关卡节奏感分析初始节奏体验关卡布局障碍数量在种障碍会以成片出现让玩家在第一印象对障碍有强化作用就是每个关卡有一个主要障碍元素大小障碍交错有出现大块障碍一般在个左右对称或者有一定美观度也会出现个个大块障碍现象一堆障碍堆积且可操作区域少会让玩家感到关卡布局第一印象会觉得难或者操作区域有限但实际上是看起来难但操作起并不难伴随操作后可操作区域越来越大就是体验到推图破坏爽感关卡道具关卡初始道具默认是通过连胜机制来给予玩家一定加成效果但有关卡就是默认会让玩家很爽体验分布规律金币关卡基本上开始会让你很爽并且也会让道具生成难度降低标准关卡中出现频率为以及所有金币关卡中这样看并不多而是在金币关卡中会多一点过程节奏体验这个我们以消除节奏来划分生成道具推进地图消除障碍来划分生成道具单纯消除消生成道具横消小飞机炸弹彩虹球组合道具来衡量爽感这一些可以用给道具分配一个权重来推进地图消除障碍多少次会消除多少障碍节奏结合关卡难易情况普通关卡也分难易情况困难关卡超级困难关卡在体验过程中多久会让掉落物块颜色产生道具可能有一个心理曲线过程让玩家体验不同反馈感总结就是道具出现频率还是比较大会让玩家觉得很多道具但是可能过不了但也不会觉得有比较大挫败感过程体验是爽结尾节奏体验结尾意味着玩家是否付费根据玩家最后步数以及目标完成情况组合成高级障碍并且可能会出现需要用到道具地方让玩家感觉不付费就可惜了最后步内一些道具生成错位一个彩虹球旁边有一个横消或小飞机需要锤子才能打比如剩下最后一个草坪没有消除需要横消或者竖消付费道具才能解决比如剩下最后一个目标需要再加步来解决问题这个就是根据关卡难易情况来结合会让玩家觉得很险过了或者感觉就差一点点有点可惜',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-04-27 12:51:45',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.2.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://bu.dusays.com/2024/05/06/6638d0849a04d.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">Gimme</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/?id=10034360892&amp;server=netease"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://bu.dusays.com/2024/05/17/66474dd9cc5e0.jpg" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://bu.dusays.com/2024/05/17/66474dd9cc5e0.jpg"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://bu.dusays.com/2024/05/17/66474dd9c71e8.jpg" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://bu.dusays.com/2024/05/17/66474dd9c71e8.jpg"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/UE5/" style="font-size: 1.05rem;">UE5<sup>2</sup></a><a href="/tags/Unity3d/" style="font-size: 1.05rem;">Unity3d<sup>7</sup></a><a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 1.05rem;">日常<sup>1</sup></a><a href="/tags/%E6%B8%B8%E6%88%8F%E6%8B%86%E5%88%86/" style="font-size: 1.05rem;">游戏拆分<sup>3</sup></a><a href="/tags/%E8%80%83%E8%AF%95%E9%A2%98/" style="font-size: 1.05rem;">考试题<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/04/"><span class="card-archive-list-date">四月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/03/"><span class="card-archive-list-date">三月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/08/"><span class="card-archive-list-date">八月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/06/"><span class="card-archive-list-date">六月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/05/"><span class="card-archive-list-date">五月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">7</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%B8%B8%E6%88%8F%E6%8B%86%E5%88%86/" itemprop="url">游戏拆分</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E6%B8%B8%E6%88%8F%E6%8B%86%E5%88%86/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>游戏拆分</span></a></span></div></div><h1 class="post-title" itemprop="name headline">Royal Match 关卡分析</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2025-04-21T04:13:44.000Z" title="发表于 2025-04-21 12:13:44">2025-04-21</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2025-04-27T04:51:45.896Z" title="更新于 2025-04-27 12:51:45">2025-04-27</time></span></div><div class="meta-secondline"><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为大连"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>大连</span><span class="post-meta-separator"></span><span class="post-meta-commentcount"><i class="anzhiyufont anzhiyu-icon-comments post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2025/04/21/Royal%20Match%20%E5%85%B3%E5%8D%A1%E5%88%86%E6%9E%90/#post-comment"><span class="waline-comment-count" data-path="/2025/04/21/Royal%20Match%20%E5%85%B3%E5%8D%A1%E5%88%86%E6%9E%90/"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></a></span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://bu.dusays.com/2025/04/27/680db6b5c42bd.png"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://blog.1018hl.cn/2025/04/21/Royal%20Match%20%E5%85%B3%E5%8D%A1%E5%88%86%E6%9E%90/"><header><a class="post-meta-categories" href="/categories/%E6%B8%B8%E6%88%8F%E6%8B%86%E5%88%86/" itemprop="url">游戏拆分</a><a href="/tags/%E6%B8%B8%E6%88%8F%E6%8B%86%E5%88%86/" tabindex="-1" itemprop="url">游戏拆分</a><h1 id="CrawlerTitle" itemprop="name headline">Royal Match 关卡分析</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">Gimme</span><time itemprop="dateCreated datePublished" datetime="2025-04-21T04:13:44.000Z" title="发表于 2025-04-21 12:13:44">2025-04-21</time><time itemprop="dateCreated datePublished" datetime="2025-04-27T04:51:45.896Z" title="更新于 2025-04-27 12:51:45">2025-04-27</time></header><h1 id="Royal-Match-关卡分析"><a href="#Royal-Match-关卡分析" class="headerlink" title="Royal Match 关卡分析"></a>Royal Match 关卡分析</h1><p>[TOC]</p>
+<h1 id="一、-障碍设计"><a href="#一、-障碍设计" class="headerlink" title="一、     障碍设计"></a>一、     障碍设计</h1><table>
+<thead>
+<tr>
+<th>障碍类别</th>
+<th>定义</th>
+<th>方块名称</th>
+<th>图像</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>阻碍类</td>
+<td>可被消除的阻碍类障碍。可以被消除或道具消除；</td>
+<td>木块，龙蛋，盘子，罐子，石头，彩色木块，金猪</td>
+<td><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2025/04/27/680dacd7b8688.jpg"></td>
+</tr>
+<tr>
+<td>地面类</td>
+<td>覆盖地表上，需要（消除，道具）1次或多次才能解除相关的障碍；</td>
+<td>草坪</td>
+<td><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2025/04/27/680dacd806d61.jpg"></td>
+</tr>
+<tr>
+<td>覆盖类</td>
+<td>通过困住某个物件或者其他东西，需要一定的条件才能解掉（消除，道具）</td>
+<td>黄油</td>
+<td><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2025/04/27/680dad2cbe477.jpg"></td>
+</tr>
+<tr>
+<td>收集类</td>
+<td>收集某个物件，范围可能是某一个具体的障碍，或者坚果，或其他他活动性的障碍，甚至是布局底下的覆盖类的收集，比如三消中底部的事物收集</td>
+<td>收信箱，小鸟</td>
+<td><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2025/04/27/680dacd7c6cde.jpg"></td>
+</tr>
+<tr>
+<td>解谜类</td>
+<td>需要收集一定的钥匙，才能解锁障碍，这个障碍可能是覆盖类的障碍，也可能是产生障碍类的障碍；</td>
+<td>门帘</td>
+<td><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2025/04/27/680dad82a2c48.jpg"></td>
+</tr>
+</tbody></table>
+<p>Royal match障碍设计，前期关卡是以【阻碍类、地面类、覆盖类，收集，组合障碍】等来进行设计。</p>
+<h3 id="1-1-阻碍类障碍"><a href="#1-1-阻碍类障碍" class="headerlink" title="1.1. 阻碍类障碍"></a>1.1. 阻碍类障碍</h3><p>打击次数 ：从木板方块开始，消除1次破坏障碍，到消除多次破坏障碍；</p>
+<p>消除条件：后期就是需要相同颜色才能消除，或者只有道具才能消除，普通的match不能消除；</p>
+<p>障碍大小：障碍大小从1个单元格到多个单元格去跨度；</p>
+<p>障碍分布：1个单元格障碍，会当成基础印象障碍来利用，分布于所有关卡中；利用最多是【木板】和【草坪】元素；</p>
+<p>障碍物组合 ：后期【木箱，彩色瓶，铁门，冰带，贝壳】组合障碍，都是以大块阻碍类基础演变来。所以整体也是一块一块碎裂。只是更大，效果更强；</p>
+<p>障碍物破坏表现 ：都以【破坏+破碎感】来展示，不管是木块，龙蛋，盘子，罐子，石头，金猪最终效果。</p>
+<p>玩家体验：满足破坏欲，看到东西【裂开+炸开+碎开】有爽感，有压力被释放快感；</p>
+<p>美术风格 ：围绕着皇室生活相关题材展开，以【木头，陶瓷，石头，金币】来表现；</p>
+<h3 id="1-2-地面类障碍"><a href="#1-2-地面类障碍" class="headerlink" title="1.2. 地面类障碍"></a>1.2. 地面类障碍</h3><p>破坏次数：从1层覆盖到多层覆盖（最多3层）；</p>
+<p>地面类障碍：只有「草坪」元素。草坪是皇室必有元素，所以也成了基础元素；</p>
+<p>玩家体验：人行为是有欲望把覆盖在表面东西，扯下来并且让它保持一致性，强迫症。</p>
+<p>美术风格：地面类在三消中是必出现，candy、开心消消乐是以「冰块」来，而Royal match 和梦幻家园是草坪，贴近皇室或者生活；</p>
+<h3 id="1-3-覆盖类障碍"><a href="#1-3-覆盖类障碍" class="headerlink" title="1.3. 覆盖类障碍"></a>1.3. 覆盖类障碍</h3><p>黄油是一整片出现，给予玩家会有非常强烈视觉效果；Royal match黄油很少小块用；</p>
+<p>打起来也是很爽，就是黄油掉落，并且看到里面东西；</p>
+<p>覆盖类障碍：这里表现是「黄油」，在题材上做了创新，就是皇室相关的东西；</p>
+<p>玩家体验：有解谜类感觉，想知道底下有什么东西，也有地面类障碍感觉；</p>
+<p>美术风格：黄油，颜色和题材都是皇室相关；</p>
+<h3 id="1-4-收集类障碍"><a href="#1-4-收集类障碍" class="headerlink" title="1.4. 收集类障碍"></a>1.4. 收集类障碍</h3><p>【信箱】：它是固定在某个位置，玩家需要想办法靠近消除或者道具才能作用到。所以这种设计可以简单，也可以非常难，根据地图摆放；</p>
+<p>【小鸟】：掉落设计，核心就是让小鸟掉下来。所以难点在于下面障碍摆放可以足够难；</p>
+<p>【信箱】和【小鸟】。这两个玩法还是有一定区别，一个是固定位置，一个是类似于拯救；</p>
+<p>玩家体验：拯救动物，这种比较好理解，人性点来。收集多少物件，这个如果硬要扯，就是目标收集，以及收集欲，但更多是一种目标达成；</p>
+<h3 id="1-4-解谜类障碍"><a href="#1-4-解谜类障碍" class="headerlink" title="1.4. 解谜类障碍"></a>1.4. 解谜类障碍</h3><p>【窗帘】解开条件就是达成收集多少颜色色块才能解除；而且是属于大范围。让玩家有很明确短期目标；</p>
+<p>解开后，里面障碍只有一种，Royal match只放一种障碍，希望保持关卡干净。</p>
+<p>前200关到181关才出现解谜类障碍，需要玩家达到一定条件（拿到钥匙条件），才能看到里面东西，解开后里面还有一层障碍；</p>
+<h1 id="二、-障碍物出现顺序"><a href="#二、-障碍物出现顺序" class="headerlink" title="二、      障碍物出现顺序"></a>二、      障碍物出现顺序</h1><table>
+<thead>
+<tr>
+<th align="center"><strong>关卡</strong></th>
+<th align="center"><strong>障碍名称</strong></th>
+<th align="center"><strong>分类&amp;大小</strong></th>
+<th align="center"><strong>分析</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">5</td>
+<td align="center">木头</td>
+<td align="center">阻碍类1格</td>
+<td align="center">第7关木头就强化为打击2次木头了，但不在引导，只是让玩家去探索，视觉表现上有区分；第22关木头再次强化了需要打击更多次头木箱；木头是最基础元素，百搭型；</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center">草坪</td>
+<td align="center">地面类1格</td>
+<td align="center">第11关强化成2次打击草坪障碍；第12关强化为3次打击障碍；</td>
+</tr>
+<tr>
+<td align="center">13</td>
+<td align="center">大门</td>
+<td align="center">组合类4格</td>
+<td align="center">需要打击多次才能开门，开完门后里面有盘子，继续打；这种障碍就不会再强化，而是各种组合其他障碍设计；</td>
+</tr>
+<tr>
+<td align="center">21</td>
+<td align="center">信箱</td>
+<td align="center">收集类1格</td>
+<td align="center">这个设计难点就是信箱放哪里以及数量多少；位置决定好不好打，没有延伸出更多更难玩法；</td>
+</tr>
+<tr>
+<td align="center">31</td>
+<td align="center">龙蛋</td>
+<td align="center">阻碍类1格</td>
+<td align="center">基础玩法，打击1次；</td>
+</tr>
+<tr>
+<td align="center">41</td>
+<td align="center">彩色瓶</td>
+<td align="center">组合类4格</td>
+<td align="center">本质就是让玩家打不同颜色，把原本只要消除即能解决问题，加上条件需要相同颜色才能解除，而且有了数量上限制；</td>
+</tr>
+<tr>
+<td align="center">51</td>
+<td align="center">罐子</td>
+<td align="center">阻碍类1格</td>
+<td align="center">基础玩法，打击2次；从难度上看，是越来越难了和龙蛋相比，因为一个障碍从打击1次变2次，单个维度并没有难，但是从数量上来看，难度会更高；</td>
+</tr>
+<tr>
+<td align="center">61</td>
+<td align="center">石头</td>
+<td align="center">阻碍类1格</td>
+<td align="center">不可以消除，需要道具才能解决问题了；</td>
+</tr>
+<tr>
+<td align="center">71</td>
+<td align="center">大草丛</td>
+<td align="center">组合类4格</td>
+<td align="center">多次打击，从阻碍类–&gt;地面类障碍；</td>
+</tr>
+<tr>
+<td align="center">81</td>
+<td align="center">黄油</td>
+<td align="center">覆盖类1格</td>
+<td align="center">新类型，覆盖住基本操作区域；</td>
+</tr>
+<tr>
+<td align="center">91</td>
+<td align="center">大铁门</td>
+<td align="center">组合类4格</td>
+<td align="center">多次打击，难度比一般防水会更大；5次打击；</td>
+</tr>
+<tr>
+<td align="center">101</td>
+<td align="center">小鸟</td>
+<td align="center">收集类1格</td>
+<td align="center">新玩法；</td>
+</tr>
+<tr>
+<td align="center">121</td>
+<td align="center">彩色木</td>
+<td align="center">阻碍类1格</td>
+<td align="center">阻碍类玩法，从次数升级，再到技能升级（石头），再到颜色限制要求；换另一种维度来让难度加大；</td>
+</tr>
+<tr>
+<td align="center">141</td>
+<td align="center">冰带</td>
+<td align="center">组合类9格</td>
+<td align="center">打击9次才能解除一行，它属于「阻挡类」玩法；</td>
+</tr>
+<tr>
+<td align="center">161</td>
+<td align="center">金猪</td>
+<td align="center">阻碍类1格</td>
+<td align="center">1次打击，只能道具消除；</td>
+</tr>
+<tr>
+<td align="center">181</td>
+<td align="center">窗帘</td>
+<td align="center">解谜类</td>
+<td align="center">需要钥匙才能解锁，解锁后下面还有惊喜等待；</td>
+</tr>
+<tr>
+<td align="center">201</td>
+<td align="center">贝壳</td>
+<td align="center">阻碍类1格</td>
+<td align="center">需要3次打击，难度再次升级；</td>
+</tr>
+</tbody></table>
+<h3 id="2-1-关卡节奏"><a href="#2-1-关卡节奏" class="headerlink" title="2.1.关卡节奏"></a>2.1.关卡节奏</h3><p>10关一个新障碍出现，其中规律变现为：</p>
+<p>阻碍类–&gt;收集+组合类–&gt;覆盖类–&gt;收集+组合类–&gt;收集类。</p>
+<p><strong>关卡难度：</strong></p>
+<p>【普通关卡】不一定简单，困难关卡也基本上是比较难，超级困难关卡卡次数一般会超过5次以上；</p>
+<p>从39关开始，45，49都有出现，以后每遇到带【5】的关卡都会是困难关卡,如55,65,75；</p>
+<p>障碍数量：3-4种以上，基本上是3种数量障碍组合；</p>
+<p>障种类：困难关卡是会结合最新关卡让玩家体验；当突破20关一个新障碍时，一般会以N-1障碍参与组合；</p>
+<p>在59关后面逢带【9】的关卡会出现超级困难关卡；</p>
+<p>障碍数量：同样是3-4种障碍；</p>
+<p>障碍种类：以新障碍去组合其他障碍；</p>
+<h1 id="三、-关卡节奏感分析"><a href="#三、-关卡节奏感分析" class="headerlink" title="三、      关卡节奏感分析"></a>三、      关卡节奏感分析</h1><h3 id="3-1-初始节奏体验"><a href="#3-1-初始节奏体验" class="headerlink" title="3.1. 初始节奏体验"></a>3.1. 初始节奏体验</h3><p><strong>【关卡布局】：</strong></p>
+<p>障碍数量在3种，障碍会以成片出现，让玩家在第一印象对障碍有强化作用，就是每个关卡有一个主要障碍元素；</p>
+<p>大小障碍交错，有出现大块障碍，一般在4个左右，对称或者有一定美观度，也会出现6个，9个大块障碍现象；</p>
+<p>一堆障碍堆积，且可操作区域少，会让玩家感到关卡布局第一印象，会觉得难，或者操作区域有限，但实际上是看起来难，但操作起并不难；</p>
+<p>伴随操作后，可操作区域越来越大，就是体验到「推图破坏」爽感；</p>
+<p><strong>【关卡道具】：</strong></p>
+<p>关卡初始道具，默认是通过「连胜机制」来给予玩家一定加成效果，但有关卡就是默认会让玩家很爽体验。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2025/04/27/680db527a3045.jpg"><strong>【分布规律】</strong></p>
+<p>【金币关卡】基本上开始会让你很爽，并且也会让道具生成难度降低；</p>
+<p>标准关卡中出现频率为【28、70，74，161，180】，以及所有金币关卡中；这样看并不多，而是在金币关卡中会多一点；</p>
+<h3 id="3-2-过程节奏体验"><a href="#3-2-过程节奏体验" class="headerlink" title="3.2. 过程节奏体验"></a>3.2. 过程节奏体验</h3><p>这个我们以消除节奏来划分，生成道具+推进地图（消除障碍）来划分；</p>
+<p><strong>【生成道具】：</strong></p>
+<p>单纯消除（3消）；</p>
+<p>生成道具（横消，小飞机，炸弹，彩虹球）；</p>
+<p>组合道具来衡量爽感，这一些可以用给道具分配一个权重来；</p>
+<p><strong>【推进地图】（消除障碍）：</strong></p>
+<p>多少次会消除多少障碍节奏；</p>
+<p>结合关卡难易情况：普通关卡（也分难易情况），困难关卡，超级困难关卡，在体验过程中，多久会让掉落物块颜色产生道具可能，有一个心理曲线过程，让玩家体验不同反馈感；</p>
+<p>总结，就是道具出现频率还是比较大，会让玩家觉得很多道具，但是可能过不了，但也不会觉得有比较大挫败感，过程体验是爽。</p>
+<h3 id="3-3-结尾节奏体验"><a href="#3-3-结尾节奏体验" class="headerlink" title="3.3. 结尾节奏体验"></a>3.3. 结尾节奏体验</h3><p>结尾意味着玩家是否付费，根据玩家最后步数，以及目标完成情况，组合成高级障碍，并且可能会出现需要用到道具地方，让玩家感觉不付费就可惜了，</p>
+<p>最后5步内一些道具生成错位（一个彩虹球，旁边有一个横消或小飞机），需要锤子才能打。</p>
+<p>比如剩下最后一个草坪没有消除，需要横消或者竖消付费道具才能解决；</p>
+<p>比如，剩下最后一个目标，需要再加5步来解决问题。</p>
+<p>这个就是根据关卡难易情况来结合，Royal match会让玩家觉得很险过了，或者感觉就差一点点有点可惜。</p>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2024/05/06/6638d07607a2f.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2024/05/06/6638d07607a2f.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">Gimme</div><div class="post-copyright__author_desc">这次我会做的更好</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://blog.1018hl.cn/2025/04/21/Royal%20Match%20%E5%85%B3%E5%8D%A1%E5%88%86%E6%9E%90/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://blog.1018hl.cn/2025/04/21/Royal%20Match%20%E5%85%B3%E5%8D%A1%E5%88%86%E6%9E%90/')">Royal Match 关卡分析</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://bu.dusays.com/2024/05/17/66474dd9cc5e0.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2024/05/17/66474dd9cc5e0.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://bu.dusays.com/2024/05/17/66474dd9c71e8.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2024/05/17/66474dd9c71e8.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://blog.1018hl.cn/2025/04/21/Royal%20Match%20%E5%85%B3%E5%8D%A1%E5%88%86%E6%9E%90/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=Royal Match 关卡分析&amp;url=https://blog.1018hl.cn/2025/04/21/Royal%20Match%20%E5%85%B3%E5%8D%A1%E5%88%86%E6%9E%90/&amp;pic=https://bu.dusays.com/2025/04/27/680db6b5c42bd.png" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.1018hl.cn" target="_blank">Gimme</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/%E6%B8%B8%E6%88%8F%E6%8B%86%E5%88%86/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>游戏拆分<span class="tagsPageCount">3</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://bu.dusays.com/2025/04/27/680db73fbdd8d.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2025/03/21/MOBA%E6%B8%B8%E6%88%8F%E8%A1%8C%E4%B8%9A%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2025/04/27/680db73fbdd8d.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">MOBA游戏行业分析</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/2024/08/21/%E7%BB%9D%E5%8C%BA%E9%9B%B6%E4%BD%93%E9%AA%8C%E4%B8%8E%E6%8B%86%E5%88%86/" title="绝区零体验与拆分"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2024/08/21/66c570ce5e997.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-08-21</div><div class="title">绝区零体验与拆分</div></div></a></div><div><a href="/2025/03/21/MOBA%E6%B8%B8%E6%88%8F%E8%A1%8C%E4%B8%9A%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" title="MOBA游戏行业分析"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2025/04/27/680db73fbdd8d.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-03-21</div><div class="title">MOBA游戏行业分析</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a><a href="/privacy" style="margin-left: 4px">隐私政策</a></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2024/05/06/6638d07607a2f.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png" alt="status"/></div></div><div class="author-info__description"><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">这有关于<b style="color:#fff">游戏、设计、开发</b>相关的问题和看法，还有<b style="color:#fff">文章翻译</b>和<b style="color:#fff">分享</b>。</div><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">相信你可以在这里找到对你有用的<b style="color:#fff">知识</b>和<b style="color:#fff">教程</b>。</div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">Gimme</h1><div class="author-info__desc">这次我会做的更好</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://blog.csdn.net/moyv57" target="_blank" title="Github"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-csdn"></use></svg></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/176926405" target="_blank" title="BiliBili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Royal-Match-%E5%85%B3%E5%8D%A1%E5%88%86%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text">Royal Match 关卡分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81-%E9%9A%9C%E7%A2%8D%E8%AE%BE%E8%AE%A1"><span class="toc-number">2.</span> <span class="toc-text">一、     障碍设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E9%98%BB%E7%A2%8D%E7%B1%BB%E9%9A%9C%E7%A2%8D"><span class="toc-number">2.0.1.</span> <span class="toc-text">1.1. 阻碍类障碍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%9C%B0%E9%9D%A2%E7%B1%BB%E9%9A%9C%E7%A2%8D"><span class="toc-number">2.0.2.</span> <span class="toc-text">1.2. 地面类障碍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E8%A6%86%E7%9B%96%E7%B1%BB%E9%9A%9C%E7%A2%8D"><span class="toc-number">2.0.3.</span> <span class="toc-text">1.3. 覆盖类障碍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E6%94%B6%E9%9B%86%E7%B1%BB%E9%9A%9C%E7%A2%8D"><span class="toc-number">2.0.4.</span> <span class="toc-text">1.4. 收集类障碍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E8%A7%A3%E8%B0%9C%E7%B1%BB%E9%9A%9C%E7%A2%8D"><span class="toc-number">2.0.5.</span> <span class="toc-text">1.4. 解谜类障碍</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81-%E9%9A%9C%E7%A2%8D%E7%89%A9%E5%87%BA%E7%8E%B0%E9%A1%BA%E5%BA%8F"><span class="toc-number">3.</span> <span class="toc-text">二、      障碍物出现顺序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%85%B3%E5%8D%A1%E8%8A%82%E5%A5%8F"><span class="toc-number">3.0.1.</span> <span class="toc-text">2.1.关卡节奏</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81-%E5%85%B3%E5%8D%A1%E8%8A%82%E5%A5%8F%E6%84%9F%E5%88%86%E6%9E%90"><span class="toc-number">4.</span> <span class="toc-text">三、      关卡节奏感分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E5%88%9D%E5%A7%8B%E8%8A%82%E5%A5%8F%E4%BD%93%E9%AA%8C"><span class="toc-number">4.0.1.</span> <span class="toc-text">3.1. 初始节奏体验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E8%BF%87%E7%A8%8B%E8%8A%82%E5%A5%8F%E4%BD%93%E9%AA%8C"><span class="toc-number">4.0.2.</span> <span class="toc-text">3.2. 过程节奏体验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E7%BB%93%E5%B0%BE%E8%8A%82%E5%A5%8F%E4%BD%93%E9%AA%8C"><span class="toc-number">4.0.3.</span> <span class="toc-text">3.3. 结尾节奏体验</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/04/21/Royal%20Match%20%E5%85%B3%E5%8D%A1%E5%88%86%E6%9E%90/" title="Royal Match 关卡分析"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2025/04/27/680db6b5c42bd.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Royal Match 关卡分析"/></a><div class="content"><a class="title" href="/2025/04/21/Royal%20Match%20%E5%85%B3%E5%8D%A1%E5%88%86%E6%9E%90/" title="Royal Match 关卡分析">Royal Match 关卡分析</a><time datetime="2025-04-21T04:13:44.000Z" title="发表于 2025-04-21 12:13:44">2025-04-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/21/MOBA%E6%B8%B8%E6%88%8F%E8%A1%8C%E4%B8%9A%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" title="MOBA游戏行业分析"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2025/04/27/680db73fbdd8d.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MOBA游戏行业分析"/></a><div class="content"><a class="title" href="/2025/03/21/MOBA%E6%B8%B8%E6%88%8F%E8%A1%8C%E4%B8%9A%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" title="MOBA游戏行业分析">MOBA游戏行业分析</a><time datetime="2025-03-21T04:13:44.000Z" title="发表于 2025-03-21 12:13:44">2025-03-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/10/%E3%80%90UE5%E3%80%91%E4%BF%AF%E8%A7%86%E8%A7%92ARPG%E6%B8%B8%E6%88%8FDemo/" title="UE5俯视角ARPG游戏Demo"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2024/05/06/6638be66d16af.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="UE5俯视角ARPG游戏Demo"/></a><div class="content"><a class="title" href="/2025/03/10/%E3%80%90UE5%E3%80%91%E4%BF%AF%E8%A7%86%E8%A7%92ARPG%E6%B8%B8%E6%88%8FDemo/" title="UE5俯视角ARPG游戏Demo">UE5俯视角ARPG游戏Demo</a><time datetime="2025-03-10T04:13:44.000Z" title="发表于 2025-03-10 12:13:44">2025-03-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/08/21/%E7%BB%9D%E5%8C%BA%E9%9B%B6%E4%BD%93%E9%AA%8C%E4%B8%8E%E6%8B%86%E5%88%86/" title="绝区零体验与拆分"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2024/08/21/66c570ce5e997.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="绝区零体验与拆分"/></a><div class="content"><a class="title" href="/2024/08/21/%E7%BB%9D%E5%8C%BA%E9%9B%B6%E4%BD%93%E9%AA%8C%E4%B8%8E%E6%8B%86%E5%88%86/" title="绝区零体验与拆分">绝区零体验与拆分</a><time datetime="2024-08-21T04:13:44.000Z" title="发表于 2024-08-21 12:13:44">2024-08-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/16/Unity%E7%B1%BB%E6%81%B6%E9%AD%94%E5%9F%8EDemo/" title="Unity类恶魔城Demo"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2024/05/06/6638be66d16af.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Unity类恶魔城Demo"/></a><div class="content"><a class="title" href="/2024/06/16/Unity%E7%B1%BB%E6%81%B6%E9%AD%94%E5%9F%8EDemo/" title="Unity类恶魔城Demo">Unity类恶魔城Demo</a><time datetime="2024-06-16T04:13:44.000Z" title="发表于 2024-06-16 12:13:44">2024-06-16</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2025 By <a class="footer-bar-link" href="/" title="Gimme" target="_blank">Gimme</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">6</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/?id=10034360892&amp;server=netease"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/UE5/" style="font-size: 0.88rem;">UE5<sup>2</sup></a><a href="/tags/Unity3d/" style="font-size: 0.88rem;">Unity3d<sup>7</sup></a><a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 0.88rem;">日常<sup>1</sup></a><a href="/tags/%E6%B8%B8%E6%88%8F%E6%8B%86%E5%88%86/" style="font-size: 0.88rem;">游戏拆分<sup>3</sup></a><a href="/tags/%E8%80%83%E8%AF%95%E9%A2%98/" style="font-size: 0.88rem;">考试题<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/9222256189&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2020 By 安知鱼 V1.6.12",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 Gimme 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><script>(() => {
+  const initWaline = () => {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://pinglun.1018hl.cn',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: true,
+    }, null))
+  }
+
+  const loadWaline = async () => {
+    if (typeof Waline === 'object') initWaline()
+    else {
+      await getCSS('https://cdn.cbd.int/@waline/client@2.15.5/dist/waline.css')
+      await getScript('https://cdn.cbd.int/@waline/client@2.15.5/dist/waline.js')
+      initWaline()
+    }
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) anzhiyu.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="post"></div><script>window.addEventListener('load', () => {
+  const changeContent = content => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const getComment = async () => {
+    try {
+      const res = await fetch('https://pinglun.1018hl.cn/api/comment?type=recent&count=6', { method: 'GET' })
+      const result = await res.json()
+      const walineArray = result.data.map(e => {
+        return {
+          'content': changeContent(e.comment),
+          'avatar': e.avatar,
+          'nick': e.nick,
+          'url': e.url + '#' + e.objectId,
+          'date': e.time || e.insertedAt
+        }
+      })
+      saveToLocal.set('waline-newest-comments', JSON.stringify(walineArray), 10/(60*24))
+      generateHtml(walineArray)
+    } catch (err) {
+      console.error(err)
+      const $dom = document.querySelector('#card-newest-comments .aside-list')
+      $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+    }
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('waline-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><script async src="https://at.alicdn.com/t/c/font_4533535_v5jjc1w55dk.js?spm=a313x.manage_type_myprojects.i1.10.41c93a81y0xfYu&amp;file=font_4533535_v5jjc1w55dk.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
